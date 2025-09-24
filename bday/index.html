@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Happy Birthday Celebration!</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="countdown-container" id="countdownContainer">
+        <h2>Birthday Countdown</h2>
+        <div id="countdown"></div>
+    </div>
+    <div class="login-screen" id="loginScreen" style="display:none;">
+        <h2>Wish Happy Birthday!</h2>
+        <input type="text" id="wisherName" placeholder="Enter your name" />
+        <button onclick="startCelebration()">Log In to Wish</button>
+    </div>
+    <div class="celebration-content" id="celebrationContent" style="display:none;">
+        <canvas id="confetti-canvas"></canvas>
+        <h1>🎉 Happy Birthday, dear! 🎉</h1>
+        <div class="cake-container">
+            <img src="cake.svg" id="cakeImg" alt="Birthday Cake" onclick="blowCandles()" />
+            <div class="candles" id="candles"></div>
+        </div>
+        <h2 id="wisherGreet"></h2>
+        <button onclick="playGame()">Play Mini-Game</button>
+        <button onclick="openMemoryWall()">Leave a Message</button>
+        <audio id="bdaySong" src="bday song.mp3" preload="auto"></audio>
+        <button onclick="toggleMarvel()">Marvel/Thor Mode 🚀</button>
+    </div>
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGame()">&times;</span>
+            <h2>🕹️ Whack-a-Bug Game</h2>
+            <canvas id="gameCanvas"></canvas>
+            <p id="gameScore"></p>
+        </div>
+    </div>
+    <div id="memoryWall" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMemoryWall()">&times;</span>
+            <h2>Birthday Memory Wall</h2>
+            <div id="messages"></div>
+            <textarea id="guestMsg" placeholder="Leave a fun message!"></textarea>
+            <input type="file" id="guestPhoto" accept="image/*" />
+            <button onclick="submitMessage()">Submit</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
